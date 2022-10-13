@@ -1,0 +1,53 @@
+.selected {
+    background-color: rgba(252, 231, 157, 0.758);
+    border: 2px solid rgb(193, 103, 0);
+}
+
+.selected2 {
+    background-color: rgba(230, 78, 67, 0.758);
+    border: 2px solid rgb(99, 8, 8);
+}
+
+.selected3 {
+    background-color: rgba(221, 221, 38, 0.758);
+    border: 2px solid rgb(156, 111, 15);
+}
+
+.selected4 {
+    background-color: rgba(130, 187, 16, 0.758);
+    border: 2px solid rgb(9, 68, 13);
+}
+
+.welcome {
+    border: 2px solid rgba(45, 41, 41, 0.758);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    height: 18vh;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 18vh;
+}
+
+.gallary {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    cursor: pointer;
+    height: 10vh; 
+}

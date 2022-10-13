@@ -4,189 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        .selected {
-            background-color: rgba(252, 231, 157, 0.758);
-            border: 2px solid rgb(193, 103, 0);
-        }
-
-        .selected2 {
-            background-color: rgba(230, 78, 67, 0.758);
-            border: 2px solid rgb(99, 8, 8);
-        }
-
-        .selected3 {
-            background-color: rgba(221, 221, 38, 0.758);
-            border: 2px solid rgb(156, 111, 15);
-        }
-
-        .selected4 {
-            background-color: rgba(130, 187, 16, 0.758);
-            border: 2px solid rgb(9, 68, 13);
-        }
-    </style>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Week 14</title>
 </head>
 
 
 
 
 <body> 
-<div>Как тебя зовут?<input type="text" placeholder="Аня" autofocus id="first_name"></div>
+    <h1>Приветствие</h1>
+    <form action="URL" class="welcome">
+<div>Как тебя зовут?<input type="text" placeholder="    Аня" autofocus id="first_name"></div>
 <button type="button" id="click_me" onclick="clickMe(); select(this)" >Поприветствовать</button>
 <div id="result"></div>
+</form>
 
+<h2>Вычисления</h2>
+<form action="URL" class="summary">
 <div>Введи первое число<input type="number" id="first_number" ></div>
 <div>+</div>
 <div>Введи второе число<input type="number" id="second_number"></div>
 <button type="button" id="click_me2" onclick="select(this)">=</button>
 <div id="result2"></div>
+</form>
 
+<form action="URL" class="summary">
 <div>Введи первое число<input type="number" id="first_number2"></div>
 <div>-</div>
 <div>Введи второе число<input type="number" id="second_number2"></div>
 <button type="button" id="click_me3" onclick="select(this)">=</button>
 <div id="result3"></div>
+</form>
 
-
+<form action="URL" class="summary">
 <div>Введи первое число<input type="number" id="first_number3"></div>
 <div>*</div>
 <div>Введи второе число<input type="number" id="second_number3"></div>
 <button type="button" id="click_me4" onclick="select(this)">=</button>
 <div id="result4"></div>
+</form>
 
+<form action="URL" class="summary">
 <div>Введи первое число<input type="number" id="first_number4"></div>
 <div>/</div>
 <div>Введи второе число<input type="number" id="second_number4"></div>
 <button type="button" id="click_me5" onclick="select(this)">=</button>
 <div id="result5"></div>
+</form>
 
-
-<button onclick="changeMe2(); select(this)" type="button" id="left">Назад</button>
-<img src="./image/photo_2021-10-10_19-56-37.jpg" id="Trees" width="40%" height="40%" alt="осень">
-<img src="./image/photo_2021-10-10_19-56-32.jpg" id="Petergof" width="40%" height="40%" alt="осень2">
-<button onclick="changeMe(); select(this)" type="button" id="right">Вперёд</button>
-
+<h2>Поменяй цвет</h2>
+<div class="color">
 <div onclick="select2(this)">Кликни на меня, и я стану красным</div>
 <div onclick="select3(this)">Кликни на меня, и я стану желтым</div>
 <div onclick="select4(this)">Кликни на меня, и я стану зелёным</div>
+</div> 
+
+<h2>Галерея</h2>
+<div class="gallary">
+<button onclick="select(this); galleryPrevious() " type="button" id="back">Назад</button>
+<img src="./image/photo_2021-10-10_19-56-37.jpg" id="Trees" class="img" width="40%" height="40%" alt="осень">
+<button onclick="select(this); galleryNext()" type="button" id="next">Вперёд</button>
+</div>
 
 
 
 
+<body onload="load()"></body>
 
-<script type="text/javascript"> 
-function clickMe() {
-
-let first_name = document.getElementById ('first_name').value;
-let html= 'Привет, <b>' + first_name;
-
-document.getElementById('result').innerHTML = html;
-}
-</script>
-
-
-
-<script type="text/javascript"> 
-    function calcSum() {
-    let first_number = document.getElementById ('first_number').value;
-    let second_number = document.getElementById ('second_number').value;
-
-    let html= +first_number + +second_number;
-
-    document.getElementById('result2').innerHTML = html;
-    }
-
-    document.getElementById('click_me2').addEventListener('click', calcSum);
-    </script>
-
-<script type="text/javascript"> 
-    function calcMin() {
-    let first_number = document.getElementById ('first_number2').value;
-    let second_number = document.getElementById ('second_number2').value;
-
-    let html= +first_number - +second_number;
-
-    document.getElementById('result3').innerHTML = html;
-    }
-
-    document.getElementById('click_me3').addEventListener('click', calcMin);
-    </script>
-
-
-<script type="text/javascript"> 
-    function calcMult() {
-    let first_number = document.getElementById ('first_number3').value;
-    let second_number = document.getElementById ('second_number3').value;
-
-    let html= +first_number * +second_number;
-
-    document.getElementById('result4').innerHTML = html;
-    }
-
-    document.getElementById('click_me4').addEventListener('click', calcMult);
-    </script>
-
-<script type="text/javascript"> 
-    function calcDivis() {
-    let first_number = document.getElementById ('first_number4').value;
-    let second_number = document.getElementById ('second_number4').value;
-
-    let html= +first_number / +second_number;
-
-    document.getElementById('result5').innerHTML = html;
-    }
-
-    document.getElementById('click_me5').addEventListener('click', calcDivis);
-    </script>
-
-<script type="text/javascript"> 
-    function select(sender) {
-        sender.classList.add("selected");
-    }
-</script>
-
-
-<script type="text/javascript"> 
-    function changeMe() {
-        let Petergof = document.getElementById ('Petergof');
-        Petergof.src = "./image/photo_2022-06-13_21-38-45.jpg";
-
-        let Trees = document.getElementById ('Trees');
-        Trees.src = "./image/photo_2022-06-13_21-35-09.jpg";
-    }
-</script>
-
-<script type="text/javascript"> 
-    function changeMe2() {
-        let Petergof = document.getElementById ('Petergof');
-        Petergof.src = "./image/photo_2021-10-10_19-56-32.jpg";
-
-        let Trees = document.getElementById ('Trees');
-        Trees.src = "./image/photo_2021-10-10_19-56-37.jpg";
-    }
-</script>
-
-<script type="text/javascript"> 
-    function select2(sender) {
-        sender.classList.add("selected2");
-    }
-</script>
-
-<script type="text/javascript"> 
-    function select3(sender) {
-        sender.classList.add("selected3");
-    }
-</script>
-
-<script type="text/javascript"> 
-    function select4(sender) {
-        sender.classList.add("selected4");
-    }
-</script>
-
-
-
-
+<script src="./javascript.js"></script>
 </body>
 </html>
